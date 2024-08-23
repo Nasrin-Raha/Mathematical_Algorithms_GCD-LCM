@@ -1,0 +1,37 @@
+# find GCD of an array
+import math
+
+def gcd(a, b):
+    while b != 0:
+        a , b = b, a % b
+    return a
+    
+# recursive classmethod
+
+def gcd_recursive(a, b):
+    if b == 0:
+        return a
+        
+    else:
+        return gcd_recursive(b, a % b)
+    
+    
+# how to get gcd of an array
+
+
+def gcdArr(arr):
+    gcd_result = arr[0]
+    for num in arr[1:]:
+        gcd_result = math.gcd(gcd_result, num)
+    return gcd_result
+    
+#driver code 
+a = 12
+b = 48
+print("GCD is :" , gcd_recursive(a, b))
+
+
+# driver code array test 
+arr = [2, 4, 6, 8]
+print("gcd array is:", gcdArr(arr))
+
