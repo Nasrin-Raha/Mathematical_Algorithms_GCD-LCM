@@ -1,0 +1,22 @@
+#find an LCM of an array 
+import math
+
+
+def gcd(a, b):
+    return math.gcd(a, b)
+    
+    
+def lcm(a, b):
+    return abs(a * b) // gcd(a, b)
+    
+def LCM_OF_ARR(arr):
+    lcm_result = arr[0]
+    for i in range(1, len(arr)):
+        lcm_result = lcm(lcm_result, arr[i])
+    return lcm_result
+    
+#dirver code 
+
+arr = [2,7,3,9,4]
+
+print("LCM is: ", LCM_OF_ARR(arr))
